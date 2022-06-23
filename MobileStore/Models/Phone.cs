@@ -22,12 +22,6 @@ namespace MobileStore.Models
         public decimal? Price { get; set; }
         public int AbouPhoneID { get; set; }
         public AboutPhone AboutPhone { get; set; }
-       // public int CartID { get; set; }
-       // public Cart Cart { get; set; }
-
-       /* internal object ToString(object price)
-        {
-            throw new NotImplementedException();
-        }*/
+        public ICollection<BuyCart> BuyCarts { get; set; }
     }
 }

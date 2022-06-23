@@ -18,9 +18,6 @@ namespace MobileStore.Models
         public int PhoneNumber { get; set; }
         [StringLength(50, ErrorMessage = "Address cannot be longer than 50 characters.")]
         public string Address { get; set; }
-       // public int? CartID { get; set; }
-       /* public Cart? Cart { get; set; }
-        public int OrderID { get; set; }
-        public Order Order { get; set; }*/
+        public BuyCart BuyCarts { get; set; }
     }
 }

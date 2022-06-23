@@ -5,16 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MobileStore.Models
 {
-    public class AboutPhone
+    public class BuyCart
     {
-        public int AboutPhoneID { get; set; }
+        [Key]
         public int PhoneID { get; set; }
+        
+        public int ClientID { get; set; }
         public string Firm { get; set; }
         public string Model { get; set; }
-        public string CPU { get; set; }
-        public string Camera { get; set; }
-        public string Color { get; set; }
-        public Phone Phones { get; set; }
-
+        public ICollection<Phone> Phones { get; set; }
+        public Client Client { get; set; }
     }
 }
