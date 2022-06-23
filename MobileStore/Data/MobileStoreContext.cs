@@ -19,6 +19,7 @@ namespace MobileStore.Data
         //public DbSet<Cart> Carts { get; set; }
         public DbSet<AboutPhone> AboutPhones { get; set; }
         public DbSet<AboutClient> AboutClient { get; set; }
+        public DbSet<BuyCart> BuyCarts { get; set; }   
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +28,9 @@ namespace MobileStore.Data
             modelBuilder.Entity<Client>().ToTable("Client");
             modelBuilder.Entity<AboutClient>().ToTable("AboutClient");
             modelBuilder.Entity<AboutPhone>().ToTable("AboutPhone");
+            modelBuilder.Entity<BuyCart>().ToTable(nameof(BuyCart))
+                .HasMany(c => c.Phones)
+                .WithMany(i => i.BuyCarts);
 
         }
         public DbSet<MobileStore.Models.Phone>? Phone { get; set; }
